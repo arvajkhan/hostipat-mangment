@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Navbar Example</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#333;
+padding:10px 20px;
+color:white;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+}
+
+.nav-links{
+list-style:none;
+display:flex;
+margin:0;
+padding:0;
+}
+
+.nav-links li{
+margin-left:20px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:16px;
+}
+
+.nav-links a:hover{
+color:yellow;
+}
+
+.menu-icon{
+display:none;
+font-size:24px;
+cursor:pointer;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+.nav-links{
+display:none;
+flex-direction:column;
+background:#333;
+position:absolute;
+top:50px;
+right:0;
+width:200px;
+}
+
+.nav-links li{
+margin:10px 0;
+text-align:center;
+}
+
+.menu-icon{
+display:block;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo">MyWebsite</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#">Home</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+</nav>
+
+<script>
+
+function toggleMenu(){
+
+let menu = document.getElementById("navLinks");
+
+if(menu.style.display === "flex"){
+menu.style.display = "none";
+}
+else{
+menu.style.display = "flex";
+}
+
+}
+
+</script>
+
+</body>
+</html>
